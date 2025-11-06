@@ -40,7 +40,7 @@ resource "aws_security_group" "roboshop-allow-traffic" {
          from_port = egress.value
          to_port = egress.value
          protocol = "tcp"
-         cidr_blocks = "[0.0.0.0/0]"
+         cidr_blocks = ["0.0.0.0/0"]
         }
     }
     dynamic "ingress" {
@@ -49,7 +49,7 @@ resource "aws_security_group" "roboshop-allow-traffic" {
          from_port = ingress.value
          to_port = ingress.value
          protocol = "tcp"
-         cidr_blocks = "[0.0.0.0/0]"
+         cidr_blocks = ["0.0.0.0/0"]
         }
     }
     tags = local.sg_tags
