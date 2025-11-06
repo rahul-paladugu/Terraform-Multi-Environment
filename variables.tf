@@ -7,7 +7,7 @@ variable "project" {
 }
 
 variable "network_ports" {
-    default = [22, 36, 65, 53]
+    default = [22, 80, 443, 53]
 }
 
 variable "zone_id" {
