@@ -18,6 +18,7 @@ resource "aws_instance" "roboshop" {
     provisioner "remote-exec" {
         inline = ["sudo dnf install nginx -y", 
                    "sudo systemctl start nginx"]
+        on_failure = continue
 
     }
     provisioner "remote-exec" {
