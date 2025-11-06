@@ -54,3 +54,11 @@ resource "aws_security_group" "roboshop-allow-traffic" {
     }
     tags = local.sg_tags
 }
+
+resource "aws_route53_record" "roboshop" {
+  zone_id = var.zone_id
+  name = "demo-${local.r53_name}"
+  type = "A"
+  ttl = 1
+  records = [aws_instance.roboshop.private_ip]
+}
