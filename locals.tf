@@ -8,4 +8,5 @@ locals {
   }
   ec2_tags = merge(local.common_tags, { Name = "${local.common_name}-jump-host" })
   sg_tags = merge(local.common_tags, { Name = "${var.environment}-${var.project}-SG" })
+  r53_name = "${var.environment}-${var.project}"
 }
