@@ -1,7 +1,7 @@
 resource "aws_instance" "roboshop" {
     ami = data.aws_ami.rahul-practice.id
     instance_type = local.instance_type
-    vpc_security_group_ids = [aws_security_group.roboshop.id]
+    vpc_security_group_ids = [aws_security_group.roboshop-allow-traffic.id]
     tags = local.ec2_tags
 
     provisioner "local-exec" {
